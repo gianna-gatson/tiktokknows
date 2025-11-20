@@ -1,20 +1,47 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Merriweather:wght@400;700&display=swap');
 
 :root {
- --primary-color: #1e40af;
- --heading-color: #4d1979;
- --text-color: #1f2937;
- --light-text: #6b7280;
- --background: #f5ddf8;
- --light-background: #f9fafb;
- --card-background: #f8f9fa;
- --card-border: #e9ecef;
- --card-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
- --card-shadow-hover: 0 4px 8px rgba(0, 0, 0, 0.15);
- --accent-color: #28a745;
- --link-hover: #007bff;
+ --primary-color: #102542; /* dark blue */
+ --heading-color: #1b3a4b; /* deeper blue for headings */
+ --text-color: #e6e2cf; /* cream for text */
+ --light-text: #b8b5a1; /* muted cream */
+ --background: #c3b7b7; /* swapped: now cream */
+ --light-background: #23272a; /* dark blue-grey */
+ --card-background: #222b2e; /* dark blue-green */
+ --card-border: #2c3e50; /* dark blue border */
+ --card-shadow: 0 2px 4px rgba(16, 37, 66, 0.2);
+ --card-shadow-hover: 0 4px 8px rgba(16, 37, 66, 0.3);
+ --accent-color: #1e824c; /* dark green */
+ --link-hover: #3aaf85; /* greenish blue */
+
 }
 
+/* =====================
+   Imports & Variables
+   ===================== */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Merriweather:wght@400;700&display=swap');
+
+:root {
+  --primary-color: #102542;
+  --heading-color: #1b3a4b;
+  --text-color: #e6e2cf;
+  --background: #c3b7b7;
+  --card-border: #2c3e50;
+  --accent-color: #1e824c;
+}
+
+/* ========== Reset & Base ========== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Tinos', 'DM Serif Text', Georgia, serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--background);
+}
 
 
 /* The next lines override the browser's margin and padding defaults */
@@ -35,115 +62,135 @@
         line-height: 1.6;
         /* #333 is dark grey, easier on the eyes */
         color: var (--text-color);
+
+/* =====================
+   Imports & Variables
+   ===================== */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Merriweather:wght@400;700&display=swap');
+
+:root {
+  --primary-color: #102542;
+  --heading-color: #1b3a4b;
+  --text-color: #e6e2cf;
+  --background: #c3b7b7;
+  --card-border: #2c3e50;
+  --accent-color: #1e824c;
+}
+
+/* ========== Reset & Base ========== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Tinos', 'DM Serif Text', Georgia, serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--background);
+}
         background-color: var(--background);
     }
 
 
-h1, h2, h3 {
-    font-family: 'Tinos', serif;
-    line-height: 1.2;
-}
 
+/* ========== Typography ========== */
+h1, h2, h3 {
+  font-family: 'Tinos', serif;
+  line-height: 1.2;
+}
 h1 {
   color: var(--heading-color);
-  font-size: clamp(1.7rem, 5vw, 3.2rem);
+  font-size: 2.5rem;
+  font-weight: 700;
   margin-bottom: 1rem;
-  line-height: 1.3;
+  line-height: 1.2;
+  background-color: white;
 }
-
 h2 {
   color: var(--heading-color);
-  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-size: 2rem;
   margin-bottom: 0.8rem;
   line-height: 1.3;
 }
-
 h3 {
-  color: var(--heading-color);
-  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  color: #544c5c;
+  font-size: 1.5rem;
+  font-weight: 600;
   margin-bottom: 0.6rem;
-  line-height: 1.3;
+  line-height: 1.4;
+}
+p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #555;
+}
+p + p {
+  margin-top: 1rem;
 }
 
 
 
-nav{
-    background-color: #fff;
-    padding:1rem 2rem;
-    border-bottom: 1px solid #e9ecef;
-}
 
+/* ========== Navigation ========== */
+nav {
+  background-color: #102542;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #01080f;
+}
 nav a {
-  color: #495057;
+  color: white;
   text-decoration: none;
   margin-right: 2rem;
   font-weight: 500;
 }
-
 nav a:hover {
-  color: #007bff;
+  color: #c3b7b7;
 }
-
-/* Basic focus state for accessibility */
 nav a:focus {
   outline: 2px solid #007bff;
   outline-offset: 2px;
 }
 
 
+
+
+/* ========== Header ========== */
 header {
-
-    display: flex;
-    flex-direction: row;
-    gap: 2rem;
-    height: 70vh;
-    background-color: #030203;
-
-    display: flex; ;
-    align-items: center;
-    padding: 2rem;
-    gap: 2rem;
-    height: 60vh;
-    background-color: #f8cdfa;
-
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+  height: 60vh;
+  background-color: #c3b7b7;
+  padding: 2rem;
 }
-
 .header_text {
-
-    background-color:rgb(247, 217, 247);
-  flex:1;
-  padding:2rem;
+  background-color: white;
+  flex: 1;
+  padding: 2rem;
 }
-
-
 .header_pic {
-flex: 1;
-/* Takes up equal space */ 
-background-color: #f4d9f7;
-min-height: 300px;
-border-radius: 10px;
-/* Subtle rounded corners */
-display: flex;
-align-items: center;
-justify-content: center;
-color: #6c757d;
+  flex: 1;
+  background-color: white;
+  min-height: 300px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6c757d;
 }
-
 .header_pic img {
-width: 100%; 
-height: 100%;
-max-width: 400px; /* ADDED prevents image fromn exceeding reasonable size*/
-max-height: 400px; /* ADDED  maintains square proporitions*/
-object-fit: cover; /*Maintains aspect ratio while filling container*/
-border-radius: 10px; /* Matches containers border */
+  width: 100%;
+  height: 100%;
+  max-width: 400px;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
 }
 
 
-main{
-    max-width:65ch; /*About 65 charcters wide- good for reading on any screen*/
-    margin: 0 auto;/*Centers content*/
-    padding: 5%;/*5% padding scales with screen size*/
-}
+
 
 
 /* Apply to your main container that holds all sections NEW MAIN!!!!!!!!!!!!!!!!*/ 
@@ -207,68 +254,60 @@ main {
 
 
 
-/*skills styling*/
+
+/* ========== Skills Section ========== */
 .skills-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1rem;
   margin-top: 2rem;
 }
-
 .skill-card {
   padding: 1.5rem;
-  background: #f8f9fa;
+  background: white;
   border-radius: 8px;
   text-align: center;
-  border: 1px solid #e9ecef;
+  border: 1.5px solid #1b3a4b;
 }
-
 .skill-card h3 {
   color: #2c3e50;
   margin-bottom: 0.5rem;
 }
-
-section{
-    margin-bottom: 2rem;
+section {
+  margin-bottom: 2rem;
 }
-/*end of styling skills section*/
 
 
 
-/*beggining of styling projects section*/
+
+/* ========== Projects Section ========== */
 .projects-container {
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
   margin-top: 2rem;
 }
-
-/* On tablets and up, show 2 columns */
 @media (min-width: 768px) {
   .projects-container {
     grid-template-columns: 1fr 1fr;
   }
 }
-
 .project-card {
   padding: 2rem;
   background: white;
-  border: 1px solid #e9ecef;
+  border: 1px solid #1b3a4b;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   transition: transform 0.3s ease;
 }
-
 .project-card:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
-
 .project-card h3 {
   color: #2c3e50;
   margin-bottom: 1rem;
 }
-/*end of styling projects section*/
             
 
 /*contact styling*/
@@ -289,7 +328,7 @@ section{
 .contact-card {
   padding: 2rem;
   background: white;
-  border: 1px solid #e9ecef;
+  border: 1.5px solid #1b3a4b;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   transition: transform 0.3s ease;
@@ -304,7 +343,7 @@ section{
   /* justify-content: space-between; */
   align-items: center;
   padding: 1rem 2rem;
-  background: white;
+  background:  #c3b7b7;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
@@ -313,7 +352,8 @@ section{
   font-weight: bold;
   text-decoration: none;
   color: #2c3e50;
-}
+  background: white;
+  padding: 0.3em 0.8em;
 
 .nav-links {
   display: flex;
@@ -347,7 +387,7 @@ h1 {
   /* Bold for impact */
   margin-bottom: 1rem;
   line-height: 1.2;
-    background-color:rgb(232, 193, 229);
+  background-color:white
 
 }
 
@@ -361,11 +401,12 @@ footer {
 }
 
 footer {
-  background-color: #f8f9fa;
+  background-color: #fcfbfc;
   padding: 2rem 0;
   text-align: center;
-  color: #edcce2;
+  color: #ece6ea;
   font-size: 0.9rem;
+  border-top: 2px solid #2c3e50;
 }
 /* Main element gets additional grid layout */
 main {
@@ -390,12 +431,12 @@ section h2::after {
   transform: translateX(-50%);
   width: 60px;
   height: 4px;
-  background: linear-gradient(90deg, #667eea, #764ba2);
+  background: linear-gradient(90deg, #667eea, #af85d8);
   border-radius: 2px;
 }
 
 h3 {
-    color: #4d1979;
+    color: #544c5c;
     font-size: 1.5rem;
     /* Large, clear headline */
     font-weight: 600;
@@ -442,7 +483,7 @@ section h2::after {
   display: block;
   width: 50px;
   height: 3px;
-  background: #28a745;
+  background: #363d47;
   margin: 1rem auto 0;
   border-radius: 2px;
 }
@@ -450,43 +491,34 @@ section h2::after {
 /* Mobile styles (default) */
 main {
   padding: 2rem 1rem;
-}
 
-/* Tablet and larger screens */
-@media (min-width: 768px) {
-  main {
-    padding: 2rem;
-  }
-}
-
-/* Mobile-first responsive adjustments */
-
-/* Small phones (320px and up) */
-.skills-container {
+/* ========== About Section ========== */
+.about-section {
+  display: grid;
   grid-template-columns: 1fr;
+  gap: 2rem;
+  padding: 3rem 0;
+  align-items: center;
 }
-
-/* Large phones and small tablets (480px and up) */
-@media (min-width: 480px) {
-  .skills-container {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  }
-}
-
-/* Tablets (768px and up) */
 @media (min-width: 768px) {
-  .skills-container {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  }
-
-  .projects-container {
-    grid-template-columns: 1fr 1fr;
+  .about-section {
+    grid-template-columns: 250px 1fr;
+    gap: 3rem;
   }
 }
+.about-image {
+  justify-self: center;
+}
+.about-image img {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  border-radius: 8px;
+}
+
 
 /* Desktop (1024px and up) */
-@media (min-width: 1024px) {
+@media (min-width: 1024px) 
   .skills-container {
     grid-template-columns: repeat(4, 1fr);
   }
-}
