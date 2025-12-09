@@ -1,3 +1,39 @@
+.chart-label {
+  margin-top: 1rem;
+  font-size: 1.05rem;
+  color: #102542;
+  font-weight: 600;
+  text-align: center;
+}
+/* TikTok statistics charts layout */
+.tiktok-stats {
+  margin: 2rem auto;
+  text-align: center;
+}
+.charts-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  align-items: flex-start;
+}
+.chart-box {
+  flex: 1 1 300px;
+  max-width: 350px;
+  min-width: 250px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(16,37,66,0.08);
+  padding: 1rem;
+  margin: 0.5rem;
+}
+.chart-box canvas {
+  width: 100% !important;
+  height: 300px !important;
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+}
 header {
   padding-top: 2rem;
 }

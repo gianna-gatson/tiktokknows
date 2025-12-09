@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gianna Gatson Portfolio</title>
+
   <link rel="stylesheet" href="css/styles.css"> 
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 
 </head>
@@ -24,14 +26,92 @@
 <header>
 
 <div class="header_image">
+
   <img src="images/landingimage.png" alt="Header Image">
 </div>
+
+<!-- TikTok Ban Statistics Section -->
+<section class="tiktok-stats">
+  <h2>Visual Evidence: TikTok's Harmful Impact</h2>
+  <div class="charts-row">
+    <div class="chart-box">
+      <canvas id="ageBarChart"></canvas>
+      <div class="chart-label">Age Breakdown of US TikTok Users</div>
+    </div>
+    <div class="chart-box">
+      <canvas id="timePieChart"></canvas>
+      <div class="chart-label">Average Time Spent on TikTok (Gen Z)</div>
+    </div>
+    <div class="chart-box">
+  <canvas id="mentalHealthPie"></canvas>
+  <div class="chart-label">Mental Health Impact on Gen Z (%)</div>
+    </div>
+  </div>
+</section>
 
 </header>
 
 
 
 <main>
+<script>
+// Chart 1: Age breakdown (Bar Chart)
+new Chart(document.getElementById('ageBarChart').getContext('2d'), {
+  type: 'bar',
+  data: {
+    labels: ['13-17', '18-24', '25-34', '35+'],
+    datasets: [{
+      label: 'US TikTok Users (%)',
+      data: [32, 35, 20, 13],
+      backgroundColor: '#102542'
+    }]
+  },
+  options: {
+    responsive: true,
+    plugins: { legend: { display: false } },
+    scales: { y: { beginAtZero: true, max: 40 } }
+  }
+});
+
+// Chart 2: Time spent (Pie Chart)
+new Chart(document.getElementById('timePieChart').getContext('2d'), {
+  type: 'pie',
+  data: {
+    labels: ['<1 hr', '1-2 hrs', '2-3 hrs', '3+ hrs'],
+    datasets: [{
+      data: [20, 40, 25, 15],
+      backgroundColor: ['#1b3a4b', '#3d1e05', '#c3b7b7', '#1e824c']
+    }]
+  },
+  options: { responsive: true }
+});
+
+// Chart 3: Mental Health Impact on Gen Z (Pie Chart)
+new Chart(document.getElementById('mentalHealthPie').getContext('2d'), {
+  type: 'pie',
+  data: {
+    labels: ['Negative Impact', 'No Impact', 'Positive Impact'],
+    datasets: [{
+      data: [42, 38, 20], // Example: 42% negative, 38% no impact, 20% positive
+      backgroundColor: ['#e74c3c', '#c3b7b7', '#1e824c']
+    }]
+  },
+  options: {
+    responsive: true,
+    plugins: {
+      tooltip: {
+        callbacks: {
+          label: function(context) {
+            let label = context.label || '';
+            let value = context.parsed;
+            return `${label}: ${value}%`;
+          }
+        }
+      }
+    }
+  }
+});
+</script>
 
 <!-- about me -->
 <section class="about-section" id="about">
